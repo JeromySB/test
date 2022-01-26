@@ -5,12 +5,14 @@ export default function Table(props) {
     const [Selected, setSelected] = useState();
 
 
+    /* CheckBox Handler */
     function handleSelected(rowId) {
-        console.log(rowId)
+
         if (rowId !== Selected) {
             setSelected(rowId);
+            props.selected(props.tableData[rowId])
         } else {
-
+            props.selected()
             setSelected();
         }
     }
@@ -23,7 +25,7 @@ export default function Table(props) {
                         <input className="form-check-input" checked={Selected >= 0} type="checkbox" value="" id={"flexCheckDefault"} />
                     </th>
 
-                    {props.TableTittle.map((element, index) => {
+                    {props.tableTittle.map((element, index) => {
                         return (
                             <th scope="col" key={index}>{element}</th>
                         )
@@ -34,7 +36,7 @@ export default function Table(props) {
                 {
 
                     /* Function to generate each row */
-                    props.TableData.map((row, index) => {
+                    props.tableData.map((row, index) => {
                         return (
                             <tr key={index} onClick={() => { handleSelected(index) }}>
                                 <th className="colCheckBox">
@@ -49,8 +51,8 @@ export default function Table(props) {
                                         /* Detects specifics columns for dates */
 
                                         if (
-                                            (props.TableTittle[index] === "Fecha de Creación")
-                                            || (props.TableTittle[index] === "Fecha de Actualización")
+                                            (props.tableTittle[index] === "Fecha de Creación")
+                                            || (props.tableTittle[index] === "Fecha de Actualización")
                                         ) {
 
                                             /* Checks if the data is a date and parse it to the machine time */
