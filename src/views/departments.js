@@ -30,7 +30,7 @@ export default function ViewDepartments() {
             <button type="button" className="btn btn-outline-success">Success</button>
             <button type="button" className="btn btn-outline-danger">Danger</button>
 
-            <button type="button" onClick={() => { console.log() }} class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit">
+            <button type="button"className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit">
                 Editar
             </button>
 
@@ -54,22 +54,22 @@ function ModalEdit(props) {
 
     return (
         <>
-            <div class="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="ModalEditLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalEditLabel">Editar Departamento</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="ModalEditLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="ModalEditLabel">Editar Departamento</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             {
                                 (function () {
                                     if (props.dataToEdit !== undefined) {
 
                                         return (
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                                <input onChange={(e) => { setdeparmentName(e.target.value) }} value={deparmentName} class="form-control" id="exampleFormControlInput1" placeholder={props.dataToEdit[1]} />
+                                            <div className="mb-3">
+                                                <label for="exampleFormControlInput1" className="form-label">Nombre</label>
+                                                <input onChange={(e) => { setdeparmentName(e.target.value) }} value={deparmentName} className="form-control" id="exampleFormControlInput1" placeholder={props.dataToEdit[1]} />
                                             </div>
                                         )
                                     } else {
@@ -79,9 +79,9 @@ function ModalEdit(props) {
                                 })()
                             }
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onClick={() => { editDepartaments(props.dataToEdit[0], deparmentName) }}>Actualizar departamento</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={() => { editDepartaments(props.dataToEdit[0], deparmentName) }}>Actualizar departamento</button>
                         </div>
                     </div>
                 </div>

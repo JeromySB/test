@@ -24,8 +24,8 @@ export default function Studies() {
             <button type="button" className="btn btn-outline-danger">Danger</button>
             <button type="button" className="btn btn-outline-warning">Warning</button>
             <Table
-                TableTittle={TableTittle}
-                TableData={DataTable}
+                tableTittle={TableTittle}
+                tableData={DataTable}
             />
 
         </>
