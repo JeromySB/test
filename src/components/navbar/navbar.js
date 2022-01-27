@@ -13,9 +13,9 @@ export default function NavBar(params) {
                                 Mantenimientos
                             </div>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="...">Departamentos</a></li>
-                                <li><a className="dropdown-item" href="...">Estudios</a></li>
-                                <li><a className="dropdown-item" href="...">Empleados</a></li>
+                                <li><a className="dropdown-item" href="/departamentos">Departamentos</a></li>
+                                <li><a className="dropdown-item" href="estudios">Estudios</a></li>
+                                <li><a className="dropdown-item" href="/empleados">Empleados</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">

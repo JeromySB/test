@@ -25,19 +25,24 @@ export default function ViewDepartments() {
     return (
         <>
             <NavBar />
-            <button type="button" className="btn btn-outline-primary">Primary</button>
-            <button type="button" className="btn btn-outline-secondary">Secondary</button>
-            <button type="button" className="btn btn-outline-success">Success</button>
-            <button type="button" className="btn btn-outline-danger">Danger</button>
 
-            <button type="button"className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit">
+            <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit">
                 Editar
+            </button>
+            <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalCreate">
+                Crear
+            </button>
+            <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ModalDelete">
+                Borrar
             </button>
 
             <ModalEdit
                 dataToEdit={selectedData}
 
             />
+            <ModalDelete 
+                dataToDelete={selectedData}/>
+            <ModalCreate />
             <Table
                 tableTittle={TableTittle}
                 tableData={DataTable}
@@ -48,6 +53,108 @@ export default function ViewDepartments() {
     )
 }
 
+
+function ModalCreate(props) {
+    const [deparmentName, setdeparmentName] = useState("");
+
+    return (
+        <>
+            <div className="modal fade" id="ModalCreate" tabindex="-1" aria-labelledby="ModalCreateLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="ModalCreateLabel">Crear Departamento</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <div className="mb-3">
+                                <label for="exampleFormControlInput1" className="form-label">Nombre</label>
+                                <input onChange={(e) => { setdeparmentName(e.target.value) }} value={deparmentName} className="form-control" id="exampleFormControlInput1" placeholder="Nombre del Departamento" />
+                            </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={() => { createDeparment(deparmentName) }}>Crear departamento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+
+}
+
+async function createDeparment(name) {
+    /* CREATE Deparment Data  */
+    await fetch("http://128.199.11.216/api/departments?DeptoName=" + name, {
+        "method": "POST",
+    })
+        .then(response => {
+            if(response.ok){
+                alert("Departamento añadido")
+            } else {
+
+                alert("No se añadir el Departamento")
+            }
+        })
+        
+}
+
+
+function ModalDelete(props) {
+
+    return (
+        <>
+            <div className="modal fade" id="ModalDelete" tabindex="-1" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="ModalDeleteLabel">Borrar Departamento</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            {
+                                (function () {
+                                    if (props.dataToDelete !== undefined) {
+
+                                        return (
+                                            <p>Seguro que desea eliminar este departamento?</p>
+                                        )
+                                    } else {
+                                        return <p>Por favor seleccione un departamento primero</p>
+
+                                    }
+                                })()
+                            }
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={() => { deleteDeparment(props.dataToDelete[0]) }}>Borrar departamento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+
+}
+
+async function deleteDeparment(id) {
+    /* DELETE Deparment */
+    await fetch("http://128.199.11.216/api/departments/" + id, {
+        "method": "DELETE",
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data["Registro borrado satisfactoriamente"] === true) {
+                alert("Registro borrado satisfactoriamente")
+            } else {
+
+                alert("No se pudo borrar el registro")
+            }
+
+        });
+}
 
 function ModalEdit(props) {
     const [deparmentName, setdeparmentName] = useState("");
@@ -90,13 +197,11 @@ function ModalEdit(props) {
     )
 
 }
-
 async function editDepartaments(id, name) {
 
-    /* REQUEST Deparment Data  */
+    /* EDIT Deparment Data  */
     await fetch("http://128.199.11.216/api/departments/" + id + "?DeptoName=" + name, {
         "method": "PUT",
-        "body": "DeptoName=Manolo 37",
     })
         .then(response => response.json())
         .then(data => {
@@ -104,7 +209,7 @@ async function editDepartaments(id, name) {
                 alert("Cambios Realizados")
             } else {
 
-                alert("No se puto realizar los cambios")
+                alert("No se pudo realizar los cambios")
             }
 
         });
