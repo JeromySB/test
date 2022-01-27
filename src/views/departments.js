@@ -1,7 +1,7 @@
 import NavBar from "../components/navbar/navbar"
 import Table from "../components/table"
 import { useEffect, useState } from "react"
-
+import OptionsBar from "../components/optionsbar"
 /* This is to define the titles on the table */
 const TableTittle = [
     "ID",
@@ -26,15 +26,7 @@ export default function ViewDepartments() {
         <>
             <NavBar />
 
-            <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit">
-                Editar
-            </button>
-            <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalCreate">
-                Crear
-            </button>
-            <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ModalDelete">
-                Borrar
-            </button>
+            <OptionsBar/>
 
             <ModalEdit
                 dataToEdit={selectedData}

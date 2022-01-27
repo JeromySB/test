@@ -17,12 +17,13 @@ export default function Table(props) {
         }
     }
     return (
+        <div id="MainTableContainer">
         <table className="table table-hover">
             <thead>
                 <tr>
 
                     <th className="colCheckBox">
-                        <input className="form-check-input" checked={Selected >= 0} type="checkbox" value="" id={"flexCheckDefault"} />
+                        <input className="form-check-input" onChange={()=>{return false}} checked={Selected >= 0} type="checkbox" value="" id={"flexCheckDefault"} />
                     </th>
 
                     {props.tableTittle.map((element, index) => {
@@ -40,7 +41,7 @@ export default function Table(props) {
                         return (
                             <tr key={index} onClick={() => { handleSelected(index) }}>
                                 <th className="colCheckBox">
-                                    <input className="form-check-input" type="checkbox" checked={index === Selected} value="" id={"check" + index} />
+                                    <input className="form-check-input" type="checkbox" onChange={()=>{return false}} checked={index === Selected} value="" id={"check" + index} />
                                 </th>
                                 {
                                     /* Function to generate the data of the row */
@@ -100,5 +101,7 @@ export default function Table(props) {
                 }
             </tbody>
         </table >
+
+        </div>
     )
 }

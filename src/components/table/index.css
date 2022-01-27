@@ -1,0 +1,11 @@
+#MainTableContainer{
+    width: 80%;
+    height: fit-content;
+    max-height: 65vh;
+    overflow: scroll;
+    margin: auto;
+    margin-top:  2rem;
+    border: 1px solid rgba(3, 121, 255, 0.637);
+    border-radius: 5px;
+    
+}

@@ -1,0 +1,9 @@
+#optionsbarContainer{
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+#optionsbarContainer > button{
+    margin-right: 1rem;
+}

@@ -3,6 +3,7 @@ import NavBar from "../components/navbar/navbar";
 
 export default function Home() {
     
+    
     return (
         <>
             <NavBar />
@@ -11,7 +12,7 @@ export default function Home() {
                 <p>You can do this, I believe in you.</p>
             </main>
             <nav>
-                <Link to="/about">About</Link>
+                <Link to="/login">Login</Link>
             </nav>
         </>
     );
