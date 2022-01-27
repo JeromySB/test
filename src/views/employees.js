@@ -68,7 +68,7 @@ function ModalDelete(props) {
 
     return (
         <>
-            <div className="modal fade" id="ModalDelete" tabindex="-1" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
+            <div className="modal fade" id="ModalDelete" tabIndex="-1" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -180,28 +180,28 @@ function ModalCreate(props) {
                         <div className="modal-body">
                             <>
 
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="InputName" className="form-label"> Nombre</label>
                                             <input onChange={(e) => { setnameInput(e.target.value) }} value={nameInput} className="form-control" id="InputName" placeholder={"Nombre"} />
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="lastnameInput" className="form-label"> Apellido</label>
                                             <input onChange={(e) => { setlastnameInput(e.target.value) }} value={lastnameInput} className="form-control" id="lastnameInput" placeholder={"Apellido"} />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="idDeparmentInput" className="form-label"> Id Departamento</label>
                                             <input onChange={(e) => { setidDeparmentInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={idDeparmentInput} className="form-control" id="idDeparmentInput" placeholder={"Id Departamento"} />
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="sexInput" className="form-label"> Sexo</label>
                                             <select className="form-select" value={sexInput} onChange={(e) => { setsexInput(e.target.value) }} id="sexInput" aria-label="Default select example">
@@ -214,52 +214,52 @@ function ModalCreate(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="idNumberCardInput" className="form-label"> Cedula</label>
                                             <input onChange={(e) => { setidNumberCardInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={idNumberCardInput} className="form-control" id="idNumberCardInput" placeholder={"Cedula"} />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="adressInput" className="form-label"> Direccion</label>
                                             <input onChange={(e) => { setadressInput(e.target.value) }} value={adressInput} className="form-control" id="adressInput" placeholder={"Direccion"} />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="phoneHomeNumberInput" className="form-label"> Numero de Telefono de Casa</label>
                                             <input onChange={(e) => { setphoneHomeNumberInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={phoneHomeNumberInput} className="form-control" id="phoneHomeNumberInput" placeholder={"Numero de Telefono de Casa"} />
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="phoneNumberInput" className="form-label"> Numero de celular</label>
                                             <input onChange={(e) => { setphoneNumberInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={phoneNumberInput} className="form-control" id="phoneNumberInput" placeholder={"Numero de celular"} />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="baseSalryInput" className="form-label"> Salario base</label>
                                             <input onChange={(e) => { setbaseSalryInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={baseSalryInput} className="form-control" id="baseSalryInput" placeholder={"Salario base"} />
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="discountInput" className="form-label"> Descuento</label>
                                             <input onChange={(e) => { setdiscountInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={discountInput} className="form-control" id="discountInput" placeholder={"Descuento"} />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div className="row">
+                                    <div className="col">
                                         <div className="mb-3">
                                             <label htmlFor="netSalaryInput" className="form-label"> Salario neto</label>
                                             <input onChange={(e) => { setnetSalaryInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={netSalaryInput} className="form-control" id="netSalaryInput" placeholder={"Salario neto"} />
@@ -354,28 +354,28 @@ function ModalEdit(props) {
                                         return (
                                             <>
 
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="InputName" className="form-label">Nombre</label>
                                                             <input onChange={(e) => { setnameInput(e.target.value) }} value={nameInput} className="form-control" id="InputName" placeholder={props.dataToEdit[1]} />
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="lastnameInput" className="form-label">Apellido</label>
                                                             <input onChange={(e) => { setlastnameInput(e.target.value) }} value={lastnameInput} className="form-control" id="lastnameInput" placeholder={props.dataToEdit[2]} />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="idDeparmentInput" className="form-label">Id Departamento</label>
                                                             <input onChange={(e) => { setidDeparmentInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={idDeparmentInput} className="form-control" id="idDeparmentInput" placeholder={props.dataToEdit[3]} />
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="sexInput" className="form-label">Sexo</label>
                                                             <select className="form-select" value={sexInput} onChange={(e) => { setsexInput(e.target.value) }} id="sexInput" aria-label="Default select example">
@@ -385,52 +385,52 @@ function ModalEdit(props) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="idNumberCardInput" className="form-label">Cedula</label>
                                                             <input onChange={(e) => { setidNumberCardInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={idNumberCardInput} className="form-control" id="idNumberCardInput" placeholder={props.dataToEdit[5]} />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="adressInput" className="form-label">Direccion</label>
                                                             <input onChange={(e) => { setadressInput(e.target.value) }} value={adressInput} className="form-control" id="adressInput" placeholder={props.dataToEdit[6]} />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="phoneHomeNumberInput" className="form-label">Numero de Telefono de Casa</label>
                                                             <input onChange={(e) => { setphoneHomeNumberInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={phoneHomeNumberInput} className="form-control" id="phoneHomeNumberInput" placeholder={props.dataToEdit[7]} />
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="phoneNumberInput" className="form-label">Numero de celular</label>
                                                             <input onChange={(e) => { setphoneNumberInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={phoneNumberInput} className="form-control" id="phoneNumberInput" placeholder={props.dataToEdit[8]} />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="baseSalryInput" className="form-label">Salario base</label>
                                                             <input onChange={(e) => { setbaseSalryInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={baseSalryInput} className="form-control" id="baseSalryInput" placeholder={props.dataToEdit[9]} />
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="discountInput" className="form-label">Descuento</label>
                                                             <input onChange={(e) => { setdiscountInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={discountInput} className="form-control" id="discountInput" placeholder={props.dataToEdit[10]} />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">
                                                         <div className="mb-3">
                                                             <label htmlFor="netSalaryInput" className="form-label">Salario neto</label>
                                                             <input onChange={(e) => { setnetSalaryInput(e.target.value) }} type="number" onPaste={preventPasteNegative} onKeyPress={preventMinusande} value={netSalaryInput} className="form-control" id="netSalaryInput" placeholder={props.dataToEdit[11]} />

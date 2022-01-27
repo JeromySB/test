@@ -2,6 +2,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import DepartmentsRoutes from "./departments";
 import EmployeesRoute from "./employees";
 import StudiesRoute from "./studies";
+import Login from "../views/login";
+import Singup from "../views/singup";
 import Home from './home'
 
 export default function Paths() {
@@ -11,6 +13,8 @@ export default function Paths() {
             <Route path="/departamentos/*" element={<DepartmentsRoutes />} />
             <Route path="/empleados/*" element={<EmployeesRoute />} />
             <Route path="/estudios/*" element={<StudiesRoute />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/singup" element={<Singup />} />
             <Route path="*" element={<NoMatch />} />
         </Routes>
     );
